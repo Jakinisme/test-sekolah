@@ -7,7 +7,7 @@ export default function Header() {
            <header className='header'>
                 <div className='header-content'>
                     <div className='navbar-content' id='navbarContent'>
-                        1
+                        
                     </div>
 
                     <div className='school-profile'>

@@ -6,7 +6,7 @@ export default function Main() {
         <main className='main'>
             <div className='main-container'>
                 <div className='main-content'>
-                    test
+                    
                 </div>
           </div>
         </main>
