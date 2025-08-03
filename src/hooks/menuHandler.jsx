@@ -16,7 +16,7 @@ export const MenuHandler = () => {
   const handleLinkClick = () => {
     closeMenu()
   }
-
+  
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add("menu-open")

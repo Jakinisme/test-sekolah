@@ -9,8 +9,8 @@ import logo from "../assets/img/logosmk1.png"
 import "../styles/header.css"
 
 export default function Header() {
-    const { isMenuOpen, toggleMenu} = MenuHandler()
-
+    const {isMenuOpen, toggleMenu} = MenuHandler()
+    
   return (
     <>
       <header className="header">
