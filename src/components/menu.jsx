@@ -1,6 +1,7 @@
 "use client"
 
 import {X, Home, User, BookOpen, Newspaper, ImageIcon, Phone } from "lucide-react"
+import { Link } from "react-router-dom"
 import logo from "../assets/img/logosmk1.png"
 
 export default function MenuOverlay({isMenuOpen, closeMenu}) {
@@ -37,16 +38,16 @@ export default function MenuOverlay({isMenuOpen, closeMenu}) {
                 {hamburgerItems.map((item, index) => {
                   const IconComponent = item.icon
                   return (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="nav-link"
                       onClick={closeMenu}
                       style={{ animationDelay: `${(index + 1) * 0.1}s` }}
                     >
                       <IconComponent size={22} />
                       <span>{item.name}</span>
-                    </a>
+                      </Link>
                   )
                 })}
               </div>
