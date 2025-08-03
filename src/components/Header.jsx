@@ -39,7 +39,10 @@ export default function Header() {
           </div>
         </div>
 
-        <MenuOverlay isMenuOpen={isMenuOpen} closeMenu={toggleMenu} />
+        {/*pisah div biar ga bingung. MENU OVERLAY*/}
+        <div className="menu-overlay">
+          <MenuOverlay isMenuOpen={isMenuOpen} closeMenu={toggleMenu} />
+        </div>      
       </header>
     </>
   )
