@@ -20,8 +20,8 @@ export default function Header() {
             <a href="/" className="logo-link">
               <img src={logo} alt="SMK Negeri 1 Tuban Logo" className="school-logo" />
               <div className="school-info">
-                <h1 className="school-name">SMK NEGERI 1</h1>
-                <p className="school-location">TUBAN</p>
+                <h1 className="school-name">SMK NEGERI 1 TUBAN</h1>
+                <p className="school-location">Terdepan dan Terpercaya</p>
               </div>
             </a>
           </div>

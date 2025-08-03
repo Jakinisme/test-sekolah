@@ -24,8 +24,8 @@ export default function MenuOverlay({isMenuOpen, closeMenu}) {
                 <div className="nav-logo">
                   <img src={logo} alt="SMK Negeri 1 Tuban Logo" />
                   <div>
-                    <h2>SMK NEGERI 1</h2>
-                    <h3>TUBAN</h3>
+                    <h2>SMK NEGERI 1 TUBAN</h2>
+                    <h3>Terdepan dan Terpercaya</h3>
                   </div>
                 </div>
                 <button className="nav-close" onClick={closeMenu} aria-label="Close menu">

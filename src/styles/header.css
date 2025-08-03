@@ -111,17 +111,14 @@ p {
 .school-name {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #1a202c;
+  color: #ffffff;
   line-height: 1.2;
-  background: linear-gradient(135deg, #06409c 0%, #1e40af 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
+
 
 .school-location {
   font-size: 0.875rem;
-  color: #003f9c;
+  color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.5px;
   line-height: 1;
@@ -252,19 +249,21 @@ p {
 .nav-logo h2 {
   font-size: 1.125rem;
   font-weight: 800;
-  color: #3b82f6;
+  color: #ffffff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
 }
 
+
 .nav-logo h3 {
   font-size: 1.2rem;
-  color: #05216e;
+  color: #ffffff;
   font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1;
   margin-top: -0.125rem;
 }
+
 
 .nav-close {
   display: flex;
