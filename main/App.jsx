@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../src/components/Header.jsx';
-import Main from '../src/components/Main.jsx';
+import Main from '../src/components/content.jsx';
 import Footer from '../src/components/Footer.jsx';
 
 export default function App() {
