@@ -16,7 +16,7 @@ export default function MenuOverlay({isMenuOpen, closeMenu}) {
       ]
     return (
         <>
-        {/* menu dibuka tampilin list item*/}
+        {/* menu dibuka, tampilin list item*/}
         {isMenuOpen && (
           <div className="nav-overlay" onClick={closeMenu}>
             <nav className="nav-menu" onClick={(e) => e.stopPropagation()}>
