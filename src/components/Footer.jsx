@@ -1,4 +1,4 @@
-import React from 'react';
+"use client"
 
 export default function Footer() {
     return (
@@ -6,7 +6,7 @@ export default function Footer() {
             <footer className='footer'>
                 <div className='footer-content'>
                     <div className='footer-text'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus possimus dolorum quia quis. Assumenda dolorem soluta, vel deleniti provident mollitia labore, velit temporibus officiis unde error suscipit adipisci, aliquam voluptatem.
+                        <p>&copy; {new Date().getFullYear()} SMK Negeri 1 Tuban.</p>
                     </div>
                 </div>
             </footer>

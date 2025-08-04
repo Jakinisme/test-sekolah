@@ -2,9 +2,9 @@
 
 import {X, Home, User, BookOpen, Newspaper, ImageIcon, Phone } from "lucide-react"
 import { Link } from "react-router-dom"
-import logo from "../assets/img/logosmk1.png"
+import logo from "../../assets/img/logosmk1.png"
 
-export default function MenuOverlay({isMenuOpen, closeMenu}) {
+export function MenuOverlay({isMenuOpen, closeMenu}) {
     
         // item list buat menu
         const hamburgerItems = [

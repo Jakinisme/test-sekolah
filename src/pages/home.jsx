@@ -1,15 +1,17 @@
 "use client"
 
+import HeroSection from "../components/heroSection"
+
 export default function Home(){
     return(
         <>
-        <div className="main">          
+        <main className="main">
             <div className ="home-container">
                 <div className ="home-content">
-                    ini home
+                    <HeroSection />
                 </div>
             </div>
-        </div>
+        </main>         
         </>
     )
 }

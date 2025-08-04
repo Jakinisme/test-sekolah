@@ -1,7 +1,7 @@
 "use client"
 
 import { MenuHandler } from "../hooks/menuHandler"
-import MenuOverlay from "../components/menu"
+import { MenuOverlay } from "./ui/menu"
  
 import {Menu, X} from "lucide-react"
 import logo from "../assets/img/logosmk1.png"

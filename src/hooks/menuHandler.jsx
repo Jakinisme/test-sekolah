@@ -1,6 +1,5 @@
 //handler buat menu
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const MenuHandler = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
