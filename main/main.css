@@ -7,7 +7,7 @@
     "main" 1fr
     "footer" auto
     / 1fr;
-  gap: 8px;
+  gap: 0px;
 }
 
 .header { grid-area: header; }

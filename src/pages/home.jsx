@@ -1,6 +1,7 @@
 "use client"
 
 import HeroSection from "../components/hero"
+import '../styles/home.css'
 
 export default function Home(){
     return(

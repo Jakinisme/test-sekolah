@@ -1,18 +1,24 @@
 "use client"
 
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-export default function ButtonNav() {
-    const [isBtnClick, setBtnClick] = useState(false)
-    const navigate = useNavigate()
+export default function ButtonNav({textContent, navigateTo}) {
 
-    const handleLinkClick = () => {
-        setBtnClick(true)
-        navigate("/profil")
-    }
+  const [isBtnClick, setBtnClick] = useState(false)
+  const navigate = useNavigate()
 
-    return (
-        <button onClick={handleLinkClick}>{isBtnClick ? " " : "Tentang Kami"}</button>
-    )
+  const handleLinkClick = async () => {
+    setBtnClick(true)
+    navigate(navigateTo)
+  }
+
+  return (
+    <button
+      onClick={handleLinkClick}
+      className={`nav-button ${isBtnClick ? 'active' : ''}`}
+    >
+      {textContent}
+    </button>
+  )
 }

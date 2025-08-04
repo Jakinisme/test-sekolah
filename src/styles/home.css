@@ -1,0 +1,241 @@
+
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #6881f1c7 0%, #2555f1 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(103, 113, 248, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+.nama-slogan {
+  margin-bottom: 3rem;
+}
+
+.nama-slogan h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideInFromLeft 1.2s ease-out 0.3s both;
+}
+
+.nama-slogan h3 {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: slideInFromRight 1.2s ease-out 0.6s both;
+  position: relative;
+}
+
+.nama-slogan h3::before,
+.nama-slogan h3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: translateY(-50%);
+}
+
+.nama-slogan h3::before {
+  left: -80px;
+}
+
+.nama-slogan h3::after {
+  right: -80px;
+}
+
+.btn-nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1,5rem;
+  animation: fadeInUp 1.2s ease-out 0.9s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem;
+    min-height: calc(100vh - 80px);
+  }
+
+  .nama-slogan {
+    margin-bottom: 2.5rem;
+  }
+
+  .nama-slogan h3::before,
+  .nama-slogan h3::after {
+    width: 40px;
+  }
+
+  .nama-slogan h3::before {
+    left: -50px;
+  }
+
+  .nama-slogan h3::after {
+    right: -50px;
+  }
+
+  .hero-section::before,
+  .hero-section::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1rem;
+  }
+
+  .nama-slogan {
+    margin-bottom: 2rem;
+  }
+
+  .nama-slogan h3::before,
+  .nama-slogan h3::after {
+    display: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .home-container {
+    background: #000;
+  }
+
+  .nama-slogan h1,
+  .nama-slogan h3 {
+    color: #fff;
+    text-shadow: none;
+    -webkit-text-fill-color: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content,
+  .nama-slogan h1,
+  .nama-slogan h3,
+  .btn-nav,
+  .hero-section::before,
+  .hero-section::after {
+    animation: none;
+  }
+
+  .nav-button {
+    transition: none;
+  }
+}
