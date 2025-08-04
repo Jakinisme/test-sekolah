@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy} from 'react'
 
-import ProfilSekolah from '../src/pages/profil.jsx';
-import Home from '../src/pages/home.jsx';
+const Profile = lazy(() => import('../src/pages/profil.jsx'));
+const Home = lazy(() => import('../src/pages/home.jsx'));
+
 import Header from '../src/components/Header.jsx';
 import Footer from '../src/components/Footer.jsx';
 
@@ -10,12 +12,16 @@ export default function App() {
     <section className='app'>
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/profil" element={<ProfilSekolah />}/>
-        </Routes>
+        <main className="main">
+          <Suspense>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/profil" element={<Profile />}/>
+          </Routes>
+        </Suspense>
+        </main>
+        <Footer />
       </Router>
-      <Footer />
     </section>
   )
 }
