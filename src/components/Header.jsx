@@ -21,7 +21,7 @@ export default function Header() {
               <img src={logo} alt="SMK Negeri 1 Tuban Logo" className="school-logo" />
               <div className="school-info">
                 <h1 className="school-name">SMK NEGERI 1 TUBAN</h1>
-                <p className="school-location">Terdepan dan Terpercaya</p>
+                <p className="school-location">Jl. Mastrip No.2, Sidorejo, Kec. Tuban, Kabupaten Tuban, Jawa Timur 62315</p>
               </div>
             </a>
           </div>
