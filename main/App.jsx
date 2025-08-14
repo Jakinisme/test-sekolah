@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy} from 'react'
 
-const Profile = lazy(() => import('../src/pages/profil.jsx'));
-const Home = lazy(() => import('../src/pages/home.jsx'));
+const Profile = lazy(() => import('@pages/profil.jsx'));
+const Home = lazy(() => import('@pages/home.jsx'));
 
-import Header from '../src/components/Header.jsx';
-import Footer from '../src/components/Footer.jsx';
+import Header from '@components/layout/Header.jsx';
+import Footer from '@components/layout/Footer.jsx';
 
 export default function App() {
   return (

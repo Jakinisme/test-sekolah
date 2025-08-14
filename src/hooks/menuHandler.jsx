@@ -1,4 +1,3 @@
-"use client"
 
 //handler buat menu
 import { useEffect, useState } from "react"

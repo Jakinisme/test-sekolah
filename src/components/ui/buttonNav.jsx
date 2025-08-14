@@ -4,7 +4,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function ButtonNav({textContent, navigateTo}) {
+export default function ButtonNav({navigateTo, label}) {
 
   const [isBtnClick, setBtnClick] = useState(false)
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function ButtonNav({textContent, navigateTo}) {
       onClick={handleLinkClick}
       className={`nav-button ${isBtnClick ? 'active' : ''}`}
     >
-      {textContent}
+      {label}
     </button>
   )
 }
