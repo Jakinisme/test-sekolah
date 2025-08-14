@@ -9,7 +9,7 @@ export default function ButtonNav({navigateTo, label}) {
   const [isBtnClick, setBtnClick] = useState(false)
   const navigate = useNavigate()
 
-  const handleLinkClick = async () => {
+  const handleLinkClick = () => {
     setBtnClick(true)
     navigate(navigateTo)
   }

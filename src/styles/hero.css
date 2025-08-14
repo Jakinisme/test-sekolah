@@ -8,8 +8,8 @@
   height: 100svh;
   background: linear-gradient(
       to bottom, 
-      rgba(255, 255, 255, 0) 70%, /* transparan di atas */
-      white 100%                  /* putih di bawah */
+      rgba(255, 255, 255, 0) 70%,
+      white 100%                  
     ),
     url('../assets/img/firefly.png') center/cover no-repeat;
   background-size: cover;
