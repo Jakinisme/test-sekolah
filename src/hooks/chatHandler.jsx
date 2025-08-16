@@ -20,10 +20,15 @@ export function ChatHandler() {
   },
 ])
   const [inputMessage, setInputMessage] = useState("")
+  //const [isNotif, setIsNotif] = useState(0)
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
+
+  //const handleNotif = (notif) => {
+  //  setIsNotif(notif)
+  //}
 
   useEffect(() => {
     scrollToBottom()

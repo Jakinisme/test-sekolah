@@ -20,7 +20,9 @@ export default function ChatSupport({
       {!isChatOpen && (
         <button onClick={toggleChat} className="chat-toggle-btn" aria-label="Open chat support">
           <Bot size={24} />
+          <div className='hidden' hidden>
           <span className="chat-badge">1</span>
+          </div>
         </button>
       )}
 

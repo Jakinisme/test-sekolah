@@ -3,6 +3,7 @@ import { Suspense, lazy} from 'react'
 
 const Profile = lazy(() => import('@pages/profil.jsx'));
 const Home = lazy(() => import('@pages/home.jsx'));
+const Gallery = lazy(() => import('@pages/galeri.jsx'))
 
 import Header from '@components/layout/Header.jsx';
 import Footer from '@components/layout/Footer.jsx';
@@ -17,6 +18,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/profil" element={<Profile />}/>
+            <Route path='/galeri' element={<Gallery />}/>
           </Routes>
         </Suspense>
         </main>

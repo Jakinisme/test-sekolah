@@ -11,12 +11,14 @@ export default function Home(){
     const chat = ChatHandler()
 
     return(
-        <div className ="home-container">
+        <section className='home-section'>
+            <div className ="home-container">
                 <div className ="home-content">
                     <HeroSection />
                     <Tes />
                     <ChatSupport {...chat}/>
                 </div>
             </div>
+        </section>
     )
 }
