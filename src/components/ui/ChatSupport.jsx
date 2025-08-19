@@ -4,15 +4,16 @@ import "@styles/bot.css";
 import { Bot, X, Send } from "lucide-react";
 
 export default function ChatSupport({
-  isChatOpen,
-  toggleChat,
-  messages,
-  isTyping,
-  messagesEndRef,
-  inputMessage,
-  setInputMessage,
-  sendMessage,
-  formatTime,
+    isChatOpen,
+    toggleChat,
+    messages,
+    isTyping,
+    messagesEndRef,
+    setInputMessage,
+    inputMessage,
+    sendMessage,
+    formatTime,
+    notif,
 }) {
   return (
     <div className="chat-support">
@@ -23,9 +24,9 @@ export default function ChatSupport({
           aria-label="Open chat support"
         >
           <Bot size={24} />
-          <div className="hidden" hidden>
-            <span className="chat-badge">1</span>
-          </div>
+            {notif.open && (
+              <span className="chat-badge">{notif.message}</span>
+            )}
         </button>
       )}
 

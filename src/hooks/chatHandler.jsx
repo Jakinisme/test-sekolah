@@ -89,14 +89,14 @@ export function ChatHandler() {
     greeting:
       "👋 Halow, Aku VHSONEBOT, asisten virtual SMK Negeri 1 Tuban yang siap bantu kamu 24/7.",
     menu: `📋 MENU UTAMA
-          1. Sejarah Sekolah SMKN 1 Tuban
-          2. Lokasi dan alamat sekolah
-          3. Prestasi terbaru siswa
-          4. Cara daftar PPDB
-          5. Info ekstrakurikuler
-          6. Jadwal kantin & menu hari ini
-          7. Pengumuman terbaru
-          8. Mata pelajaran`,
+  1. Sejarah Sekolah SMKN 1 Tuban
+  2. Lokasi dan alamat sekolah
+  3. Prestasi terbaru siswa
+  4. Cara daftar PPDB
+  5. Info ekstrakurikuler
+  6. Jadwal kantin & menu hari ini
+  7. Pengumuman terbaru
+  8. Mata pelajaran`,
           
     replies: {
       1: "🏫 Sejarah Singkat SMKN 1 Tuban: Berdiri untuk mencetak lulusan siap kerja & berwirausaha. Berkembang dengan berbagai kompetensi keahlian, fasilitas praktik, serta kerjasama industri.",
