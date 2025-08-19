@@ -13,18 +13,37 @@ export function ChatHandler() {
   const COMMON_QUESTIONS = [
     {
       //keys: adalah kata kunci untuk mencari
-      keys: ["jurusan dkv", "dkv itu apa", "desain komunikasi visual", "dkv gimana", "rasanya dkv"],
+      keys: [
+        "jurusan dkv",
+        "dkv itu apa",
+        "desain komunikasi visual",
+        "dkv gimana",
+        "rasanya dkv",
+      ],
       //answer: adalah jawaban dari kata kunci
       answer:
         "🎨 DKV (Desain Komunikasi Visual) : belajar desain grafis, ilustrasi, tipografi, fotografi, videografi, UI/UX dasar & branding. Cocok buat yang kreatif, suka seni & visual.",
     },
     {
-      keys: ["jurusan tkj", "tkj apa", "tkj susah", "teknik komputer jaringan", "tkj"],
+      keys: [
+        "jurusan tkj",
+        "tkj apa",
+        "tkj susah",
+        "teknik komputer jaringan",
+        "tkj",
+      ],
       answer:
         "💻 TKJ (Teknik Komputer & Jaringan) : instalasi OS, rakit PC, jaringan LAN/WAN, server, keamanan jaringan, sampai basic web. Banyak praktik lab & troubleshooting.",
     },
     {
-      keys: ["jurusan mesin", "teknik mesin", "mesin itu apa", "tsm", "tkr", "otomotif"],
+      keys: [
+        "jurusan mesin",
+        "teknik mesin",
+        "mesin itu apa",
+        "tsm",
+        "tkr",
+        "otomotif",
+      ],
       answer:
         "⚙️ Teknik Mesin/Otomotif : dasar engine, sistem transmisi, kelistrikan, perawatan & perbaikan kendaraan, manufaktur dasar, gambar teknik. Cocok yang suka bongkar-pasang & teknik.",
     },
@@ -67,17 +86,18 @@ export function ChatHandler() {
 
   //obj bot msg
   const BOT_MESSAGES = {
-    greeting: "👋 Halow, Aku VHSONEBOT, asisten virtual SMK Negeri 1 Tuban yang siap bantu kamu 24/7.",
+    greeting:
+      "👋 Halow, Aku VHSONEBOT, asisten virtual SMK Negeri 1 Tuban yang siap bantu kamu 24/7.",
     menu: `📋 MENU UTAMA
-1. Sejarah Sekolah SMKN 1 Tuban
-2. Lokasi dan alamat sekolah
-3. Prestasi terbaru siswa
-4. Cara daftar PPDB
-5. Info ekstrakurikuler
-6. Jadwal kantin & menu hari ini
-7. Pengumuman terbaru
-8. Mata pelajaran
-`,
+          1. Sejarah Sekolah SMKN 1 Tuban
+          2. Lokasi dan alamat sekolah
+          3. Prestasi terbaru siswa
+          4. Cara daftar PPDB
+          5. Info ekstrakurikuler
+          6. Jadwal kantin & menu hari ini
+          7. Pengumuman terbaru
+          8. Mata pelajaran`,
+          
     replies: {
       1: "🏫 Sejarah Singkat SMKN 1 Tuban: Berdiri untuk mencetak lulusan siap kerja & berwirausaha. Berkembang dengan berbagai kompetensi keahlian, fasilitas praktik, serta kerjasama industri.",
       2: "📍 Alamat: Jl. Mastrip No.2, Sidorejo, Kec. Tuban, Kabupaten Tuban, Jawa Timur 62315.",
@@ -100,11 +120,12 @@ export function ChatHandler() {
 
   const [notif, setNotif] = useState({ open: false, index: null, message: "" });
   const notifTimerRef = useRef(null);
+
   function showNotifByIndex(i, duration = 2500) {
     if (i == null || i < 0 || i >= NOTIFS.length) return;
 
     setNotif({ open: true, index: i, message: NOTIFS[i] });
-    
+
     if (notifTimerRef.current) clearTimeout(notifTimerRef.current);
     notifTimerRef.current = setTimeout(() => {
       setNotif({ open: false, index: null, message: "" });
@@ -153,12 +174,22 @@ export function ChatHandler() {
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { id: Date.now(), text: BOT_MESSAGES.greeting, sender: "bot", timestamp: new Date() },
+          {
+            id: Date.now(),
+            text: BOT_MESSAGES.greeting,
+            sender: "bot",
+            timestamp: new Date(),
+          },
         ]);
         setTimeout(() => {
           setMessages((prev) => [
             ...prev,
-            { id: Date.now() + 1, text: BOT_MESSAGES.menu, sender: "bot", timestamp: new Date() },
+            {
+              id: Date.now() + 1,
+              text: BOT_MESSAGES.menu,
+              sender: "bot",
+              timestamp: new Date(),
+            },
           ]);
           setIsTyping(false);
         }, 1000);
@@ -207,7 +238,8 @@ export function ChatHandler() {
     } else if (isMenu) {
       botText = BOT_MESSAGES.menu;
     } else if (isNumber && BOT_MESSAGES.replies[userText]) {
-      botText = BOT_MESSAGES.replies[userText] + "\n\nKetik 0 untuk lihat menu.";
+      botText =
+        BOT_MESSAGES.replies[userText] + "\n\nKetik 0 untuk lihat menu.";
     } else {
       botText = BOT_MESSAGES.invalid;
     }
@@ -215,16 +247,21 @@ export function ChatHandler() {
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { id: Date.now() + 1, text: botText, sender: "bot", timestamp: new Date() },
+        {
+          id: Date.now() + 1,
+          text: botText,
+          sender: "bot",
+          timestamp: new Date(),
+        },
       ]);
       setIsTyping(false);
 
       if (common) {
-        showNotifByIndex(0); 
+        showNotifByIndex(0);
       } else if (isMenu) {
         showNotifByIndex(1);
       } else if (isNumber && BOT_MESSAGES.replies[userText]) {
-        showNotifByIndex(0); 
+        showNotifByIndex(0);
       } else {
         showNotifByIndex(2);
       }
@@ -232,7 +269,10 @@ export function ChatHandler() {
   };
 
   const formatTime = (date) =>
-    new Date(date).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    new Date(date).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
   return {
     isChatOpen,
