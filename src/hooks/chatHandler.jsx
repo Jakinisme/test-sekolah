@@ -4,6 +4,7 @@ export function ChatHandler() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
+<<<<<<< HEAD
 
   const COMMON_QUESTIONS = [
     {
@@ -126,11 +127,54 @@ export function ChatHandler() {
   useEffect(() => {
     document.body.classList.toggle("chat-opened", isChatOpen);
     return () => document.body.classList.remove("chat-opened");
+=======
+
+  const BOT_MESSAGES = {
+    greeting: "Halo aku si VHSONEBOT!",
+    askOne: "Ketik 1",
+    thanksOne: "Terimakasih",
+  };
+
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      text: BOT_MESSAGES.greeting,
+      sender: "bot",
+      timestamp: new Date(),
+    },
+  ]);
+  const [inputMessage, setInputMessage] = useState("");
+  //const [isNotif, setIsNotif] = useState(0)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  //const handleNotif = (notif) => {
+  //  setIsNotif(notif)
+  //}
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  useEffect(() => {
+    if (isChatOpen) {
+      document.body.classList.add("chat-opened");
+    } else {
+      document.body.classList.remove("chat-opened");
+    }
+
+    return () => {
+      document.body.classList.remove("chat-opened");
+    };
+>>>>>>> e8db1a7b7a83a2fa3167b8712f120a2752a24e7c
   }, [isChatOpen]);
 
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
   };
+<<<<<<< HEAD
 
   useEffect(() => {
     if (isChatOpen && isFirstOpen) {
@@ -166,6 +210,8 @@ export function ChatHandler() {
     }
     return null;
   };
+=======
+>>>>>>> e8db1a7b7a83a2fa3167b8712f120a2752a24e7c
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -178,6 +224,7 @@ export function ChatHandler() {
       sender: "user",
       timestamp: new Date(),
     };
+<<<<<<< HEAD
 
     setMessages((prev) => [...prev, userMessage]);
     setInputMessage("");
@@ -219,6 +266,35 @@ export function ChatHandler() {
 
   const formatTime = (date) =>
     date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+=======
+
+    setMessages((prev) => [...prev, userMessage]);
+    setInputMessage("");
+    setIsTyping(true);
+
+    const botText =
+      inputMessage.trim() === "1"
+        ? BOT_MESSAGES.thanksOne
+        : BOT_MESSAGES.askOne;
+
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          text: botText,
+          sender: "bot",
+          timestamp: new Date(),
+        },
+      ]);
+      setIsTyping(false);
+    }, 1500);
+  };
+
+  const formatTime = (date) => {
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  };
+>>>>>>> e8db1a7b7a83a2fa3167b8712f120a2752a24e7c
 
   return {
     isChatOpen,
@@ -230,9 +306,12 @@ export function ChatHandler() {
     inputMessage,
     sendMessage,
     formatTime,
+<<<<<<< HEAD
 
     notif,
     showNotifByIndex,
     closeNotif,
+=======
+>>>>>>> e8db1a7b7a83a2fa3167b8712f120a2752a24e7c
   };
 }

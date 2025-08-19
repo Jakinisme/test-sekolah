@@ -1,38 +1,37 @@
-
 //handler buat menu
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export const MenuHandler = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev)
-  }
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   const handleLinkClick = () => {
-    closeMenu()
-  }
-  
+    closeMenu();
+  };
+
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.classList.add("menu-open")
+      document.body.classList.add("menu-open");
     } else {
-      document.body.classList.remove("menu-open")
+      document.body.classList.remove("menu-open");
     }
 
     return () => {
-      document.body.classList.remove("menu-open")
-    }
-  }, [isMenuOpen])
+      document.body.classList.remove("menu-open");
+    };
+  }, [isMenuOpen]);
 
   return {
     isMenuOpen,
     toggleMenu,
     closeMenu,
     handleLinkClick,
-  }
-}
+  };
+};

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import '@styles/bot.css'
-import { Bot, X, Send } from "lucide-react"
+import "@styles/bot.css";
+import { Bot, X, Send } from "lucide-react";
 
 export default function ChatSupport({
   isChatOpen,
@@ -12,20 +12,25 @@ export default function ChatSupport({
   inputMessage,
   setInputMessage,
   sendMessage,
-  formatTime
+  formatTime,
 }) {
-    
   return (
     <>
       {!isChatOpen && (
-        <button onClick={toggleChat} className="chat-toggle-btn" aria-label="Open chat support">
+        <button
+          onClick={toggleChat}
+          className="chat-toggle-btn"
+          aria-label="Open chat support"
+        >
           <Bot size={24} />
-          <span className="chat-badge">1</span>
+          <div className="hidden" hidden>
+            <span className="chat-badge">1</span>
+          </div>
         </button>
       )}
 
       {isChatOpen && (
-        <div className={'chat-window' }>
+        <div className={"chat-window"}>
           <div className="chat-header">
             <div className="chat-header-info">
               <div className="chat-avatar">
@@ -37,20 +42,29 @@ export default function ChatSupport({
               </div>
             </div>
             <div className="chat-header-actions">
-              <button onClick={toggleChat} className="chat-action-btn" aria-label="Close chat">
+              <button
+                onClick={toggleChat}
+                className="chat-action-btn"
+                aria-label="Close chat"
+              >
                 <X size={16} />
               </button>
             </div>
           </div>
 
-          {(
+          {
             <>
               <div className="chat-messages">
                 {messages.map((message) => (
-                  <div key={message.id} className={`chat-message ${message.sender}`}>
+                  <div
+                    key={message.id}
+                    className={`chat-message ${message.sender}`}
+                  >
                     <div className="message-content">
                       <p>{message.text}</p>
-                      <span className="message-time">{formatTime(message.timestamp)}</span>
+                      <span className="message-time">
+                        {formatTime(message.timestamp)}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -90,9 +104,9 @@ export default function ChatSupport({
                 </div>
               </form>
             </>
-          )}
+          }
         </div>
       )}
     </>
-  )
+  );
 }
