@@ -9,9 +9,12 @@ export function ChatHandler() {
 
   const messagesEndRef = useRef(null);
 
+  //array quest
   const COMMON_QUESTIONS = [
     {
+      //keys: adalah kata kunci untuk mencari
       keys: ["jurusan dkv", "dkv itu apa", "desain komunikasi visual", "dkv gimana", "rasanya dkv"],
+      //answer: adalah jawaban dari kata kunci
       answer:
         "🎨 DKV (Desain Komunikasi Visual) : belajar desain grafis, ilustrasi, tipografi, fotografi, videografi, UI/UX dasar & branding. Cocok buat yang kreatif, suka seni & visual.",
     },
@@ -62,8 +65,9 @@ export function ChatHandler() {
     },
   ];
 
+  //obj bot msg
   const BOT_MESSAGES = {
-    greeting: "👋 Halow, Aku VHSONEBOT, asisten virtual SMK yang siap bantu kamu 24/7.",
+    greeting: "👋 Halow, Aku VHSONEBOT, asisten virtual SMK Negeri 1 Tuban yang siap bantu kamu 24/7.",
     menu: `📋 MENU UTAMA
 1. Sejarah Sekolah SMKN 1 Tuban
 2. Lokasi dan alamat sekolah
@@ -96,10 +100,11 @@ export function ChatHandler() {
 
   const [notif, setNotif] = useState({ open: false, index: null, message: "" });
   const notifTimerRef = useRef(null);
-
   function showNotifByIndex(i, duration = 2500) {
     if (i == null || i < 0 || i >= NOTIFS.length) return;
+
     setNotif({ open: true, index: i, message: NOTIFS[i] });
+    
     if (notifTimerRef.current) clearTimeout(notifTimerRef.current);
     notifTimerRef.current = setTimeout(() => {
       setNotif({ open: false, index: null, message: "" });
@@ -215,13 +220,13 @@ export function ChatHandler() {
       setIsTyping(false);
 
       if (common) {
-        showNotifByIndex(0); // ✅ Terkirim!
+        showNotifByIndex(0); 
       } else if (isMenu) {
-        showNotifByIndex(1); // ℹ️ info menu
+        showNotifByIndex(1);
       } else if (isNumber && BOT_MESSAGES.replies[userText]) {
-        showNotifByIndex(0); // ✅ valid pilihan menu
+        showNotifByIndex(0); 
       } else {
-        showNotifByIndex(2); // ⚠️ tidak ketemu
+        showNotifByIndex(2);
       }
     }, 700);
   };
