@@ -15,7 +15,7 @@ export default function ChatSupport({
   formatTime,
 }) {
   return (
-    <>
+    <div className="chat-support">
       {!isChatOpen && (
         <button
           onClick={toggleChat}
@@ -52,61 +52,57 @@ export default function ChatSupport({
             </div>
           </div>
 
-          {
-            <>
-              <div className="chat-messages">
-                {messages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={`chat-message ${message.sender}`}
-                  >
-                    <div className="message-content">
-                      <p>{message.text}</p>
-                      <span className="message-time">
-                        {formatTime(message.timestamp)}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-
-                {isTyping && (
-                  <div className="chat-message bot">
-                    <div className="message-content">
-                      <div className="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
-
-              <form onSubmit={sendMessage} className="chat-input-form">
-                <div className="chat-input-container">
-                  <input
-                    type="text"
-                    value={inputMessage}
-                    onChange={(e) => setInputMessage(e.target.value)}
-                    placeholder="Type your message..."
-                    className="chat-input"
-                    maxLength={500}
-                  />
-                  <button
-                    type="submit"
-                    className="chat-send-btn"
-                    disabled={!inputMessage.trim()}
-                    aria-label="Send message"
-                  >
-                    <Send size={16} />
-                  </button>
+          <div className="chat-messages">
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`chat-message ${message.sender}`}
+              >
+                <div className="message-content">
+                  <p>{message.text}</p>
+                  <span className="message-time">
+                    {formatTime(message.timestamp)}
+                  </span>
                 </div>
-              </form>
-            </>
-          }
+              </div>
+            ))}
+
+            {isTyping && (
+              <div className="chat-message bot">
+                <div className="message-content">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          <form onSubmit={sendMessage} className="chat-input-form">
+            <div className="chat-input-container">
+              <input
+                type="text"
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                placeholder="Type your message..."
+                className="chat-input"
+                maxLength={500}
+              />
+              <button
+                type="submit"
+                className="chat-send-btn"
+                disabled={!inputMessage.trim()}
+                aria-label="Send message"
+              >
+                <Send size={16} />
+              </button>
+            </div>
+          </form>
         </div>
       )}
-    </>
+    </div>
   );
 }
